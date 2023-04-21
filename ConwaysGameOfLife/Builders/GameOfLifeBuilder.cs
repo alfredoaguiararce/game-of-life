@@ -46,12 +46,6 @@ namespace ConwaysGameOfLife.Builders
             return this;
         }
 
-        public GameOfLifeBuilder SetCell(int X, int Y, bool Value)
-        {
-            this.Game.SetCell(X, Y, Value);
-            return this;
-        }
-
         public GameOfLifeBase Build()
         {
             this.Game.Init();
