@@ -1,15 +1,33 @@
-using ConwaysGameOfLife.Utils;
-namespace ConwaysGameOfLifeTests
+using ConwaysGameOfLife.Abstractions;
+using ConwaysGameOfLife.Implementations;
+using ConwaysGameOfLife.Interfaces;
+
+namespace ConwaysGameOfLifeTests.ClassicMode
 {
 
     [TestFixture]
-    public class GameOfLifeTests
+    public class BasicInitGameOfLifeTests
     {
         [Test]
         public void TestSetAndGetCell()
         {
-            // Create a 3 x 3 game
-            GameOfLife game = new GameOfLife(3, 3);
+            ClassicGameOfLife game = new ClassicGameOfLife(3, 3);
+
+            // Set the value of the cell x = 1, y = 1 is true
+            game.SetCell(1, 1, true);
+
+            // Assert
+            Assert.IsTrue(game.GetCell(1, 1));
+        }
+
+        [Test]
+        public void TestSetAndGetCellVariation()
+        {
+            ClassicGameOfLife game = new ClassicGameOfLife();
+            game.SetWidth(3);
+            game.SetHeight(3);
+            game.Init();    
+            //game.SetInitialState(new bool[3, 3]);
 
             // Set the value of the cell x = 1, y = 1 is true
             game.SetCell(1, 1, true);
@@ -21,8 +39,7 @@ namespace ConwaysGameOfLifeTests
         [Test]
         public void TestNextGeneration()
         {
-            // Create a 3 x 3 game
-            GameOfLife game = new GameOfLife(3, 3);
+            ClassicGameOfLife game = new ClassicGameOfLife(3, 3);
 
             // Set the value of the cell x = 1, y = 1 is true
             game.SetCell(1, 1, true);
@@ -40,8 +57,8 @@ namespace ConwaysGameOfLifeTests
         [Test]
         public void TestStableSquare()
         {
-            // Creamos un juego de la vida con una configuración inicial
-            GameOfLife game = new GameOfLife(4, 4);
+            // Create a 3 x 3 game
+            ClassicGameOfLife game = new ClassicGameOfLife(4, 4);
             game.SetCell(1, 1, true);
             game.SetCell(1, 2, true);
             game.SetCell(2, 1, true);
