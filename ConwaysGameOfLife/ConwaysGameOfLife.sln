@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConwaysGameOfLife", "ConwaysGameOfLife.csproj", "{7BF5CF26-F130-48B7-B4CE-9D9265F6357D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConwaysGameOfLifeTests", "..\ConwaysGameOfLifeTests\ConwaysGameOfLifeTests.csproj", "{D716643A-130B-4D00-B979-C15C8870A830}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BF5CF26-F130-48B7-B4CE-9D9265F6357D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF5CF26-F130-48B7-B4CE-9D9265F6357D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF5CF26-F130-48B7-B4CE-9D9265F6357D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF5CF26-F130-48B7-B4CE-9D9265F6357D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D716643A-130B-4D00-B979-C15C8870A830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D716643A-130B-4D00-B979-C15C8870A830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D716643A-130B-4D00-B979-C15C8870A830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D716643A-130B-4D00-B979-C15C8870A830}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EB3C886-7744-4870-B8D5-207E4EBC8298}
+	EndGlobalSection
+EndGlobal
