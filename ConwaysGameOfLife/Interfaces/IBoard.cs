@@ -14,7 +14,7 @@
         void SetCell(int x, int y, bool value);
         bool GetCell(int x, int y);
         void NextGeneration();
-        void SetInitialState(bool[,] Board);
+        void SetInitialGeneration(bool[,] Board);
         bool[,] GetCurrentBoard();
         void SetRules(IGameRules Rules);
         IGameRules GetRules();

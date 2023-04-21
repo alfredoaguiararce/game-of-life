@@ -55,7 +55,7 @@ namespace ConwaysGameOfLifeTests.ClassicMode
             };
 
             // Act
-            Assert.Throws<ArgumentException>(() => game.SetInitialState(initialBoard));
+            Assert.Throws<ArgumentException>(() => game.SetInitialGeneration(initialBoard));
         }
     }
 }

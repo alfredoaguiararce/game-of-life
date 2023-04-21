@@ -20,7 +20,7 @@ namespace ConwaysGameOfLife.Tests
             };
 
             // Act
-            game.SetInitialState(initialBoard);
+            game.SetInitialGeneration(initialBoard);
 
             Assert.That(game.GetCurrentBoard(), Is.EqualTo(initialBoard));
 

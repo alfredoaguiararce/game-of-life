@@ -4,14 +4,14 @@ namespace ConwaysGameOfLife.Abstractions
 {
     public abstract class GameOfLifeBase : IBoard
     {
-        /* These are properties of the abstract class `GameOfLifeBase`. */
+        /* These are properties of the abstract class `Game`. */
         public int Width { get; set; }
         public int Height { get; set; }
         public bool[,] Board { get; set; }
         public IGameRules GameRules { get; set; }
 
-        /* `public GameOfLifeBase(){}` is a default constructor for the abstract class
-        `GameOfLifeBase`. It does not take any parameters and does not have any implementation. It
+        /* `public Game(){}` is a default constructor for the abstract class
+        `Game`. It does not take any parameters and does not have any implementation. It
         is used to create an instance of the class with default values for its properties. */
         public GameOfLifeBase(){}
 
@@ -21,7 +21,7 @@ namespace ConwaysGameOfLife.Abstractions
         /// </summary>
         /// <param name="Board">a two-dimensional boolean array representing the initial state of a
         /// board game.</param>
-        public void SetInitialState(bool[,] Board)
+        public void SetInitialGeneration(bool[,] Board)
         {
             if(Board.GetLength(0) != this.Width || Board.GetLength(1) != this.Height) throw new ArgumentException("The board size is not the same as the board size.");
             this.Board = Board;
@@ -172,7 +172,8 @@ namespace ConwaysGameOfLife.Abstractions
             if (GetWidth() == 0) throw new ArgumentNullException("Width cannont be null or zero.");
             if (GetRules() == null) throw new ArgumentNullException("The rules of the board aren't initialize..");
 
-            SetInitialState(new bool[Width, Height]);
+            if (Board is null) { SetInitialGeneration(new bool[Width, Height]); }
+            
             CheckBoardExists();
         }
 

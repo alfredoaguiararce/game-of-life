@@ -1,6 +1,4 @@
-using ConwaysGameOfLife.Abstractions;
 using ConwaysGameOfLife.Implementations;
-using ConwaysGameOfLife.Interfaces;
 
 namespace ConwaysGameOfLifeTests.ClassicMode
 {
@@ -27,7 +25,7 @@ namespace ConwaysGameOfLifeTests.ClassicMode
             game.SetWidth(3);
             game.SetHeight(3);
             game.Init();    
-            //game.SetInitialState(new bool[3, 3]);
+            //game.SetInitialGeneration(new bool[3, 3]);
 
             // Set the value of the cell x = 1, y = 1 is true
             game.SetCell(1, 1, true);

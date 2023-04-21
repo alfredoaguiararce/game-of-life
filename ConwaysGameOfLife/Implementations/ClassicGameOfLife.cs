@@ -8,13 +8,13 @@ namespace ConwaysGameOfLife.Implementations
         `x` and `y`. It sets the width and height of the game board using the `SetWidth` and
         `SetHeight` methods, respectively. It also sets the rules for the game using the
         `ClassicRules` class and initializes the game board with a 2D boolean array of size `x` by
-        `y` using the `SetInitialState` method. */
+        `y` using the `SetInitialGeneration` method. */
         public ClassicGameOfLife(int x, int y)
         {
             this.SetWidth(x);
             this.SetHeight(y);
             this.SetRules(new ClassicRules());
-            this.SetInitialState(new bool[x, y]);
+            this.SetInitialGeneration(new bool[x, y]);
         }
 
         /* This is a default constructor for the `ClassicGameOfLife` class that initializes the rules
