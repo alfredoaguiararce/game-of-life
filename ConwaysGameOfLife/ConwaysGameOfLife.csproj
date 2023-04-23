@@ -4,6 +4,28 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>ConwaysGameOfLifeBuilder</Title>
+    <Authors>$(Authors)</Authors>
+    <PackageProjectUrl>https://github.com/alfredoaguiararce/game-of-life</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/alfredoaguiararce/game-of-life</RepositoryUrl>
+    <PackageTags>game of life, library, experiment, builder</PackageTags>
+    <PackAsTool>True</PackAsTool>
+    <Description>ConwaysGameOfLife is a C# .NET 6 library that provides an implementation of Conway's Game of Life. It includes a GameOfLifeBuilder class to easily configure the game, and a GameOfLifeBase class that provides the basic logic to update the game state. The library supports the classic version of the game, where cells can be either alive or dead, and follows the rules for cell birth and survival based on the number of neighbors. The library also includes a set of unit tests to ensure the correctness of the implementation. This package is intended for developers who want to use or extend the library in their own projects.</Description>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>MIT.txt</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Licenses\MIT.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
