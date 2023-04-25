@@ -17,7 +17,11 @@
     <PackageLicenseFile>MIT.txt</PackageLicenseFile>
     <PackageReleaseNotes>Removed the DotnetTool package type from the library, to ensure compatibility with projects that don't support it.
 Note: This change was made to address compatibility issues with the 'ConsoleGameOfLife' project.</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+    <PackageReleaseNotes>This release includes a fix for the game board wrap feature in ClassicGameOfLife. Previously, the wrap feature was not working properly, causing cells to disappear off the edges of the board. With this fix, the wrap feature now functions correctly, allowing cells to wrap around to the opposite edge of the board.</PackageReleaseNotes>
+    <PackageReleaseNotes>New Features : Added Serialize and Deserialize methods to the GameOfLifeBase class for easier serialization and deserialization of game state. Added unit tests for the new methods.
+Bug Fixes : Fixed a bug where ClassicGameOfLife would not correctly calculate the next generation for certain configurations. Improvements : Improved performance of the GameOfLifeBase class for large game boards. Improved documentation and code readability.</PackageReleaseNotes>
+    <Version>1.1.2</Version>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +33,10 @@ Note: This change was made to address compatibility issues with the 'ConsoleGame
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
 
 </Project>

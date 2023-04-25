@@ -1,4 +1,6 @@
 ﻿using ConwaysGameOfLife.Interfaces;
+using ConwaysGameOfLife.Models;
+using Newtonsoft.Json;
 
 namespace ConwaysGameOfLife.Abstractions
 {
@@ -214,6 +216,33 @@ namespace ConwaysGameOfLife.Abstractions
         private void CheckCellInBoard(int x, int y)
         {
             if (x > this.Width || y > this.Height) throw new InvalidOperationException("The cell is outside the board.");
+        }
+
+        public string Serialize()
+        {
+            var currentBoard = GetCurrentBoard();
+            var serializedBoard = JsonConvert.SerializeObject(currentBoard);
+
+            var state = new GameOfLifeStateSerialized
+            {
+                Width = Width,
+                Height = Height,
+                Board = serializedBoard
+            };
+
+            return JsonConvert.SerializeObject(state);
+        }
+
+        public void Deserialize(string serializedState)
+        {
+            var state = JsonConvert.DeserializeObject<GameOfLifeStateSerialized>(serializedState);
+            Width = state.Width;
+            Height = state.Height;
+
+            var deserializedBoard = JsonConvert.DeserializeObject<bool[,]>(state.Board);
+            SetWidth(Width);
+            SetHeight(Height);
+            SetInitialGeneration(deserializedBoard);
         }
     }
 }

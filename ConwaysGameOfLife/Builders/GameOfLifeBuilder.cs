@@ -45,11 +45,17 @@ namespace ConwaysGameOfLife.Builders
             this.Game = new ClassicGameOfLife(X, Y);
             return this;
         }
+        public GameOfLifeBuilder SetFromSerialized(string SerializedBoard)
+        {
+            this.Game.Deserialize(SerializedBoard);
+            return this;
+        }
 
         public GameOfLifeBase Build()
         {
             this.Game.Init();
             return this.Game;
         }
+
     }
 }

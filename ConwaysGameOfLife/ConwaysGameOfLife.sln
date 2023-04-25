@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConwaysGameOfLife", "Conway
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConwaysGameOfLifeTests", "..\ConwaysGameOfLifeTests\ConwaysGameOfLifeTests.csproj", "{AC04500B-C3A5-4B59-A7C7-8809396F93C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleGameOfLife", "..\..\ConsoleGameOfLife\ConsoleGameOfLife\ConsoleGameOfLife.csproj", "{D864A474-C78B-4238-9F53-143B8FDADA0C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{AC04500B-C3A5-4B59-A7C7-8809396F93C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC04500B-C3A5-4B59-A7C7-8809396F93C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC04500B-C3A5-4B59-A7C7-8809396F93C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D864A474-C78B-4238-9F53-143B8FDADA0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D864A474-C78B-4238-9F53-143B8FDADA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D864A474-C78B-4238-9F53-143B8FDADA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D864A474-C78B-4238-9F53-143B8FDADA0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
