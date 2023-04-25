@@ -11,13 +11,11 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/alfredoaguiararce/game-of-life</RepositoryUrl>
     <PackageTags>game of life, library, experiment, builder</PackageTags>
-    <PackAsTool>False</PackAsTool>
+    <PackAsTool>True</PackAsTool>
     <Description>ConwaysGameOfLife is a C# .NET 6 library that provides an implementation of Conway's Game of Life. It includes a GameOfLifeBuilder class to easily configure the game, and a GameOfLifeBase class that provides the basic logic to update the game state. The library supports the classic version of the game, where cells can be either alive or dead, and follows the rules for cell birth and survival based on the number of neighbors. The library also includes a set of unit tests to ensure the correctness of the implementation. This package is intended for developers who want to use or extend the library in their own projects.</Description>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>MIT.txt</PackageLicenseFile>
-    <PackageReleaseNotes>Removed the DotnetTool package type from the library, to ensure compatibility with projects that don't support it.
-Note: This change was made to address compatibility issues with the 'ConsoleGameOfLife' project.</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+    <VersionPrefix>1.0.1</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
