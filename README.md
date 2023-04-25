@@ -51,6 +51,16 @@ To set the state of a specific cell, call the SetCell(int x, int y, bool isAlive
 game.SetCell(1, 1, true);
 
 ```
+You can also serialize and deserialize the game state using the Serialize() and Deserialize(string serializedState) methods respectively.
+
+
+```csharp
+string serializedState = game.Serialize();
+GameOfLifeBase deserializedGame = new GameOfLifeBuilder()
+                                .SetAsClassicGameOfLife()
+                                .SetFromSerialized(serializedState)
+                                .Build();
+```
 
 **Testing**
 
