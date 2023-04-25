@@ -38,7 +38,7 @@ namespace ConwaysGameOfLife.Implementations
                 for (int y = 0; y < GetHeight(); y++)
                 {
                     bool cellState = GetCell(x, y);
-                    int neighborsCount = CountNeighbors(x, y);
+                    int neighborsCount = CountWrapNeighbors(x, y);
 
                     newCells[x, y] = GetRules().ApplyRules(cellState, neighborsCount);
                 }

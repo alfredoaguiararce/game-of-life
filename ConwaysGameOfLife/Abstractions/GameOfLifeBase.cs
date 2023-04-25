@@ -80,43 +80,63 @@ namespace ConwaysGameOfLife.Abstractions
         public abstract void NextGeneration();
 
         /// <summary>
-        /// This function counts the number of live neighbors surrounding a given cell on a game board.
+        /// This function counts the number of alive neighboring cells in a grid, with the ability to
+        /// wrap around the edges.
         /// </summary>
-        /// <param name="X">The X-coordinate of the cell for which we want to count the number of live
-        /// neighbors.</param>
-        /// <param name="Y">The Y parameter represents the vertical position of a cell on the game
-        /// board. It is used in the CountNeighbors method to calculate the number of live neighboring
-        /// cells around a given cell at position (X, Y).</param>
+        /// <param name="x">The x-coordinate of the cell for which we want to count the neighboring
+        /// cells.</param>
+        /// <param name="y">The y-coordinate of the cell for which we are counting the number of alive
+        /// neighboring cells.</param>
         /// <returns>
-        /// The method is returning an integer value which represents the count of live neighbors for a
-        /// given cell on a board.
+        /// The method is returning an integer value, which is the count of neighboring cells that are
+        /// alive.
         /// </returns>
-        protected int CountNeighbors(int X, int Y)
+        protected int CountWrapNeighbors(int x, int y)
         {
-            int liveNeighborCount = 0;
+            int count = 0;
 
-            // Check each neighboring cell
-            for (int rowOffset = -1; rowOffset <= 1; rowOffset++)
+            // Loop through the neighboring cells
+            for (int i = -1; i <= 1; i++)
             {
-                for (int colOffset = -1; colOffset <= 1; colOffset++)
+                for (int j = -1; j <= 1; j++)
                 {
-                    int neighborX = X + rowOffset;
-                    int neighborY = Y + colOffset;
-
-                    // Check if neighbor is inside the board bounds
-                    bool neighborInsideBoard = neighborX >= 0 && neighborX < Width && neighborY >= 0 && neighborY < Height;
-
-                    // Exclude the current cell from neighbor count
-                    bool neighborIsNotCurrentCell = rowOffset != 0 || colOffset != 0;
-
-                    if (neighborInsideBoard && neighborIsNotCurrentCell && Board[neighborX, neighborY])
+                    if (i == 0 && j == 0)
                     {
-                        liveNeighborCount++;
+                        // Skip the cell itself
+                        continue;
+                    }
+
+                    int neighborX = x + i;
+                    int neighborY = y + j;
+
+                    // Wrap around the edges of the grid
+                    if (neighborX < 0)
+                    {
+                        neighborX = Width - 1;
+                    }
+                    else if (neighborX >= Width)
+                    {
+                        neighborX = 0;
+                    }
+
+                    if (neighborY < 0)
+                    {
+                        neighborY = Height - 1;
+                    }
+                    else if (neighborY >= Height)
+                    {
+                        neighborY = 0;
+                    }
+
+                    // Check if the neighboring cell is alive
+                    if (Board[neighborX, neighborY])
+                    {
+                        count++;
                     }
                 }
             }
 
-            return liveNeighborCount;
+            return count;
         }
 
         /// <summary>
